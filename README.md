@@ -13,7 +13,7 @@ The documentation of Roassal3 is expanding at a sustained pace.
     - [How to create a chart from a list of numbers?](documentation/how-to.md#How-to-create-a-chart-from-a-list-of-numbers)
 	- [How can I use animation to execute a block at a regular pace?](documentation/how-to.md#How-can-I-use-animation-to-execute-a-block-at-a-regular-pace)
 	- [How can I draw a SVG path?](documentation/how-to.md#How-can-I-draw-a-SVG-path)
-- [Reference Documentation](documentation/Reference/reference.md) (detail about the Roassal machinery and key classes)
+- [Reference Documentation](Reference/reference.md) (detail about the Roassal machinery and key classes)
 - FAQ
 	- [Where is the classes RTView?](documentation/FAQ.md#Where-is-the-classes-RTView)
 	- [What about the book Agile Visualization?](documentation/FAQ.md#What-about-the-book-Agile-Visualization)
