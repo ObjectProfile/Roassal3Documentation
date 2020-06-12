@@ -1,6 +1,6 @@
 # Roassal3 documentation
 
-The documentation of Roassal3 is expanding at a sustained pace.
+This repository centralizes the effort of documenting [Roassal3](https://github.com/ObjectProfile/Roassal3). The documentation of Roassal3 is expanding at a sustained pace.
 
 - Tutorials (learning-oriented material centered around practical steps):
     - [Tutorial 01 - Adding Simple Nodes, Edges, and Layout](documentation/LesMiserables.md)
