@@ -9,3 +9,32 @@ The book [http://agilevisualization.com](http://agilevisualization.com) is about
 ## How to export a visualization to PDF or SVG?
 We provide a set of exporter in https://github.com/ObjectProfile/Roassal3Exporters
 We support PDF, SVG, MOV, and MP4. The last two file format are useful for animations.
+
+## How to export a visualization in a given size of a PDF?
+You need to have the exporters https://github.com/ObjectProfile/Roassal3Exporters
+The following code exports a visualization as a PDF file, using letter size:
+
+```Smalltalk
+c := RSCanvas new.
+
+lbls := RSGroup new.
+Collection withAllSubclassesDo: [ :cls |
+    lbl := RSLabel new text: cls name; model: cls.
+    lbls add: lbl ].
+c addAll: lbls.
+
+RSNormalizer fontSize
+    shapes: lbls;
+    normalize: #numberOfMethods.
+   
+c @ RSHierarchyPacker.
+
+c extent: (RSPageExtent letter).
+c when: RSExtentChangedEvent do: [ :evt |
+	c camera zoomToFit: c extent.
+	].
+
+c pdfExporter
+	fileName: '/tmp/test3.pdf';
+	export.
+```
