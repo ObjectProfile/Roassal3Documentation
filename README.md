@@ -18,3 +18,4 @@ This repository centralizes the effort of documenting [Roassal3](https://github.
 	- [Where is the classes RTView?](documentation/FAQ.md#Where-is-the-classes-RTView)
 	- [What about the book Agile Visualization?](documentation/FAQ.md#What-about-the-book-Agile-Visualization)
 	- [How to export a visualization to PDF or SVG?](documentation/FAQ.md#How-to-export-a-visualization-to-PDF-or-SVG)
+	- [How to export a visualization in a given size of a PDF?](documentation/FAQ.md#How-to-export-a-visualization-in-a-given-size-of-a-PDF)
