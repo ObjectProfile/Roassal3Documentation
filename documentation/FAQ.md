@@ -38,3 +38,20 @@ c pdfExporter
 	fileName: '/tmp/test3.pdf';
 	export.
 ```
+
+## How to make an object visualizable using GTInspector?
+GTInspector is a moldable inspector that is part of Pharo and was developed as part of the Glamorous Toolkit project. GTInspector offers a way to hook visualization in it. 
+
+```Smalltalk
+MyClass>>gtInspectorViewIn: composite
+	<gtInspectorPresentationOrder: -10>
+	composite roassal3
+		title: 'View';
+		initializeCanvas: [ | c |
+			c := RSCanvas new.
+			...
+			c ]
+			
+```
+It is a good practice to have `initializeCanvas: [ self visualize ]` and define a method `visualize` in `MyClass`.
+Either way, you can now inspect an instance of `MyClass`.
