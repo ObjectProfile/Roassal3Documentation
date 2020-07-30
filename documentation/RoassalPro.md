@@ -33,4 +33,4 @@ If you are happy of the support we give for free, we do accept donations:
 ## Money?
 The paid services and the membership presented above and the donations will be exclusively used to pay salaries of the engineering team in charge of making Roassal the coolest visualization engine on Earth. 
 
-We can emit official invoices and we are entitled to the Chilean tax system. You can reach us by [mail](alexandre.bergel@me.com) or by phone (+56 9 913 123 81). 
+We can emit official invoices and we are entitled to the Chilean tax system. You can reach us by [mail](mailto://alexandre.bergel@me.com) or by phone (+56 9 913 123 81). 
