@@ -11,12 +11,12 @@ Metacello new
     load.
 ```
 
-The dataset essentially contains two kind of valuables data: _characters_ of the historical novel and _coappearances_ of the characters. We will visualize these data.
+The dataset essentially contains two kinds of interesting data: _characters_ of the historical novel and _coappearances_ of the characters. We will visualize this data.
 
 After loading Les Miserables and Roassal3, you can execute the following script:
 
 ```Smalltalk
-"Extract data from Les Miserables French historical novel"
+"Extract data from the French historical novel Les Miserables"
 m := LMModel new create.
 
 "Each character is represented as a small ellipse"
@@ -26,7 +26,7 @@ characters := m characters collect: [ :c | RSEllipse new size: 5 ].
 c := RSCanvas new.
 c addAll: characters.
 
-"All the characters are displayed as a grid"
+"All the characters are displayed using a grid layout"
 RSGridLayout on: characters.
 
 "The canvas can be zoomed in / out using keys I and O"
@@ -35,13 +35,13 @@ c @ RSCanvasController.
 
 ```
 
-This produces the following picture:
+This produces the following output:
 ![alt text](../screenshots/LesMiserables01.png)
 
 We can normalize the size of each character based on the number of times she or he coappears:
 
 ```Smalltalk
-"Extract data from Les Miserables French historical novel"
+"Extract data from the French historical novel Les Miserables"
 m := LMModel new create.
 
 "Each character is represented as a small ellipse"
@@ -56,7 +56,7 @@ RSNormalizer size
 	shapes: characters;
 	normalize: #numberOfCoappearances.
 
-"All the characters are displayed as a grid"
+"All the characters are displayed using a grid layout"
 RSGridLayout on: characters.
 
 "Make each element have a popup text"
@@ -71,7 +71,7 @@ c @ RSCanvasController.
 
 We can add edges to indicate coappearances:
 ```Smalltalk
-"Extract data from Les Miserables French historical novel"
+"Extract data from the French historical novel Les Miserables"
 m := LMModel new create.
 
 "Each character is represented as a small ellipse"
@@ -100,10 +100,10 @@ eb moveBehind.
 eb 	shapes: characters.
 eb connectToAll: #characters.
 
-"All the characters are displayed as a grid"
+"All the characters are displayed using a grid layout"
 RSForceBasedLayout new charge: -900; on: characters.
 
-"Make each element have a popup text and is draggable"
+"Make each element have a popup text and allow it to be dragged"
 characters @ RSPopup @ RSDraggable.
 
 "The canvas can be zoomed in / out using keys I and O"
@@ -114,7 +114,7 @@ c @ RSCanvasController.
 
 Circles can be replaced with labels:
 ```Smalltalk
-"Extract data from Les Miserables French historical novel"
+"Extract data from the French historical novel Les Miserables"
 m := LMModel new create.
 
 "Each character is represented as a label"
@@ -151,7 +151,7 @@ eb connectToAll: #characters.
 "The characters are displayed as a force-directed graph"
 RSForceBasedLayout new charge: -1500; on: characters.
 
-"Make each element have a popup text and is draggable"
+"Make each element have a popup text and allow it to be dragged"
 characters @ RSPopup @ RSDraggable.
 
 "The canvas can be zoomed in / out using keys I and O"
@@ -160,7 +160,7 @@ c @ RSCanvasController.
 ```
 ![alt text](../screenshots/LesMiserables04.png)
 
-So far we interactively built a script to visualize a small dataset. Although a good start, it is not really adequate when extensible and customizable code is expected. A script, such as the one we provided, has the benefit to be consise and self-contained, but it is relatively complex and require an overall understanding to be adapted and extend. We can wrap it into a dedicated class and cut the script into particular methods. As such, we can create the class `LesMiserableVisualization`:
+So far we interactively built a script to visualize a small dataset. Although a good start, it's not the best approach when extensibility and customizability is desired. A script, such as the one we provided, has the benefit of conciseness and is self-contained, but it is relatively complex and requires greater overall understanding in order to be adapted and extended. To achieve the latter, we can wrap it with a dedicated class and break up the script into individual methods. As such, we can create the class `LesMiserableVisualization`:
 
 ```Smalltalk
 Object subclass: #LesMiserableVisualization
@@ -169,7 +169,7 @@ Object subclass: #LesMiserableVisualization
 	package: 'LesMiserableVisualization'
 ```
 
-The temporary variables we had in our script are turned into instance variables. The initialization can be done in the `initialize` method:
+The temporary variables we had in our script are converted to instance variables. Initialization can be done in the `initialize` method:
 
 ```Smalltalk
 LesMiserableVisualization>>>initialize
@@ -210,7 +210,7 @@ LesMiserableVisualization>>>createCharacters
 	characters @ RSPopup @ RSDraggable.
 ```
 
-We can now focus on the necessary methods to actually build the visualization. Consider the following methods to build coapperance relationship:
+We can now focus on the necessary methods to actually build the visualization. Consider the following methods to build coappearance relationship:
 ```Smalltalk
 LesMiserableVisualization>>>addLines
 	self addLinesColored: Color gray
@@ -228,7 +228,7 @@ LesMiserableVisualization>>>addLinesColored: aColor
 	eb connectToAll: #characters.
 ```
 
-Similarly, we can provide the necessary methods to adjust colors of the characters:
+Similarly, we can provide the necessary methods to adjust the colors of the characters:
 ```Smalltalk
 LesMiserableVisualization>>>adjustColor
 	self adjustColorShapeFrom: Color gray to: Color red
@@ -273,7 +273,7 @@ LesMiserableVisualization>>>doLayout: aLayout
 	aLayout on: characters
 ```
 
-The visualization can be open using:
+The visualization can be invoked using:
 
 ```Smalltalk
 LesMiserableVisualization>>>open
@@ -281,7 +281,7 @@ LesMiserableVisualization>>>open
 	canvas open
 ```
 
-By cutting the original scripts into a set of parametrizable methods, we turned our script into a small and customizabler application. For example, we can perform:
+By breaking up the original scripts into a set of parametrized methods, we turned our script into a small and customizabler application. For example, we can perform:
 
 ```Smalltalk
 LesMiserableVisualization new
@@ -305,7 +305,7 @@ LesMiserableVisualization new
 to produce:
 ![alt text](../screenshots/LesMiserables06.png)
 
-Variant of the visualization may be easily built:
+A variant of the visualization may be easily built:
 
 ```Smalltalk
 LesMiserableVisualization new
