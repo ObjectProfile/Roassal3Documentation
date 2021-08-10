@@ -89,8 +89,8 @@ RSNormalizer size
 "The same normalization using colors"
 RSNormalizer color
 	shapes: characters;
-	from: Color gray trans;
-	to: Color red trans;
+	from: Color gray translucent;
+	to: Color red translucent;
 	normalize: #numberOfCoappearances.
 
 eb := RSEdgeBuilder arrowedLine.
@@ -137,13 +137,13 @@ RSNormalizer fontSize
 "The same normalization using colors"
 RSNormalizer color
 	shapes: characters;
-	from: Color gray trans;
-	to: Color red trans;
+	from: Color gray translucent;
+	to: Color red translucent;
 	normalize: #numberOfCoappearances.
 
 eb := RSEdgeBuilder arrowedLine.
 eb canvas: c.
-eb color: Color gray trans.
+eb color: Color gray translucent.
 eb moveBehind.
 eb 	shapes: characters.
 eb connectToAll: #characters.
@@ -222,7 +222,7 @@ LesMiserableVisualization>>>addLinesColored: aColor
 	| eb |
 	eb := RSEdgeBuilder line.
 	eb canvas: canvas.
-	eb color: aColor trans.
+	eb color: aColor translucent.
 	eb moveBehind.
 	eb shapes: characters.
 	eb connectToAll: #characters.
@@ -239,8 +239,8 @@ LesMiserableVisualization>>>adjustColorShapeFrom: color1 to: color2
 	"Normalizing the characters"
 	RSNormalizer color
 		shapes: characters;
-		from: color1 trans;
-		to: color2 trans;
+		from: color1 translucent;
+		to: color2 translucent;
 		normalize: #numberOfCoappearances.
 ```
 
