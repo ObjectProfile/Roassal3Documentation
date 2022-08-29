@@ -133,6 +133,14 @@ GraphAnalyzer>>models: someObjects
 	elements @ RSPopup @ RSDraggable.
 ```
 
+And finally we define the build method:
+
+```st
+GraphAnalyzer>>build
+    layout on: elements.
+    ^ canvas addAll: elements; yourself
+```
+
 We can now try our first script:
 
 ```Smalltalk
