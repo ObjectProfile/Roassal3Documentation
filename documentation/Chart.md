@@ -228,24 +228,25 @@ r := Random seed: 42.
 
 c := RSChart new.
 p := RSScatterPlot new x: x y: y.
-p processBlock: [ :shapes |
-		shapes models: z.
-		RSNormalizer size
-			shapes: shapes;
-			from: 2;
-			to: 10;
-			normalize: #yourself.
-		RSNormalizer color
-			shapes: shapes;
-			normalize: #yourself.
-		shapes translucent.
-			 ].
+
 c addPlot: p.
 
 c addDecoration: (RSHorizontalTick new doNotUseNiceLabel asFloat: 3).
 c addDecoration: RSVerticalTick new.
+c build.
+shapes := p ellipses.
+shapes models: z.
+RSNormalizer size
+	shapes: shapes;
+	from: 2;
+	to: 10;
+	normalize: #yourself.
+RSNormalizer color
+	shapes: shapes;
+	normalize: #yourself.
+shapes translucent.
 
-c
+c canvas
 ```
 
 The result is:
