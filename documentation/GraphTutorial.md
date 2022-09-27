@@ -138,7 +138,7 @@ And finally we define the build method:
 ```st
 GraphAnalyzer>>build
     layout on: elements.
-    ^ canvas addAll: elements; yourself
+    ^ canvas
 ```
 
 We can now try our first script:
