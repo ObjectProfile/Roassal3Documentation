@@ -65,8 +65,8 @@ eb connectToAll: relation.
 RSGridLayout on: elements.
 
 c edges do: #withBorder.
-c edges @ RSHighlightable defaultRed.
-c nodes @ RSHighlightable defaultRed withOutgoingEdges.
+c edges @ RSHighlightable red.
+c nodes @ RSHighlightable red withOutgoingEdges.
 
 RSForceBasedLayout new charge: -200; on: elements.
 
@@ -82,8 +82,8 @@ Finally, nodes are connected using the expression `eb connectToAll: relation`. S
 We add a bit of interaction to make visual element highlightable. The three lines:
 ```Smalltalk
 c edges do: #withBorder.
-c edges @ RSHighlightable defaultRed.
-c nodes @ RSHighlightable defaultRed withOutgoingEdges.
+c edges @ RSHighlightable red.
+c nodes @ RSHighlightable red withOutgoingEdges.
 ```
 make the visual elements aware of the mouse movement. If the mouse is above a node, it is highlighted as well as outgoing edges.
 
@@ -138,7 +138,7 @@ And finally we define the build method:
 ```st
 GraphAnalyzer>>build
     layout on: elements.
-    ^ canvas addAll: elements; yourself
+    ^ canvas
 ```
 
 We can now try our first script:
@@ -177,8 +177,8 @@ GraphAnalyzer>>relation: aOneArgBlock
 	eb connectToAll: aOneArgBlock.
 
 	canvas edges do: #withBorder.
-	canvas edges @ RSHighlightable defaultRed.
-	canvas nodes @ RSHighlightable defaultRed withOutgoingEdges.
+	canvas edges @ RSHighlightable red.
+	canvas nodes @ RSHighlightable red withOutgoingEdges.
 ```
 
 The following code produce the same result than our original script:
