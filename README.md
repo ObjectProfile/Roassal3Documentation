@@ -1,4 +1,17 @@
-# Roassal3 documentation
+#Roassal3 documentation
+
+# Attention
+<img width="400" alt="image" src="https://github.com/ObjectProfile/Roassal3/assets/10532890/c92f4033-954f-4e29-a13d-d90ab23dffcd">
+
+WE ARE MOVING
+- Roassal3 => https://github.com/pharo-graphics/Roassal
+- Roassal3Exporters => https://github.com/pharo-graphics/RoassalExporters
+- Roassal3Documentation => https://github.com/pharo-graphics/RoassalDocumentation
+  
+New repositories:
+- RoassalLayouts =>  https://github.com/pharo-graphics/RoassalLayouts
+
+Roassal is part of pharo thats why we want to keep it as part of the pharo ecosystem, thats why we are moving and this repository will be frozen.
 
 This repository centralizes the effort of documenting [Roassal3](https://github.com/ObjectProfile/Roassal3). The documentation of Roassal3 is expanding at a sustained pace.
 
